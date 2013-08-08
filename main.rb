@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'token_phrase'
 
-get '/' do
-  TokenPhrase.generate(' ', :numbers => false)
+class UnplannedNarrative < Sinatra::Base
+  get '/' do
+    TokenPhrase.generate(' ', :numbers => false)
+  end
 end
