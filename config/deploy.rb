@@ -1,3 +1,5 @@
+require 'capistrano/shared_file'
+
 require 'rvm/capistrano'
 set :rvm_ruby_string, '2.0.0'
 
@@ -23,11 +25,11 @@ role :app, host
 set :rack_env, :production
 
 set :deploy_to, "/var/www/kobayashi.cyanoryx.com/#{application}"
-set :unicorn_conf, "#{current_path}/config/unicorn.rb"
+set :unicorn_conf, "#{current_path}/unicorn.rb"
 set :unicorn_pid, "#{shared_path}/pids/unicorn.pid"
 
 set :local_shared_dirs, %w(tmp/pids tmp/sockets log/)
-set :local_shared_files, %w(unicorn.rb)
+set :shared_files, %w(unicorn.rb)
 
 namespace :deploy do
   task :setup_unicorn do
