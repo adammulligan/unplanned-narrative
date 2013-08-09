@@ -1,3 +1,6 @@
+require 'rvm/capistrano'
+set :rvm_ruby_string, '2.0.0'
+
 require 'bundler/capistrano'
 
 set :application, "unplanned_narrative"
