@@ -38,7 +38,7 @@ namespace :deploy do
     template = File.read(File.join(File.dirname(__FILE__), "..", 'unicorn.rb.erb'))
     rendered_template = ERB.new(template).result(binding)
 
-    put rendered_template, "#{shared_path}/unicorn.rb"
+    put rendered_template, "#{shared_path}/files/unicorn.rb"
   end
 
   task :restart do
