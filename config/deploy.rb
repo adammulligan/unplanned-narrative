@@ -28,7 +28,7 @@ set :deploy_to, "/var/www/kobayashi.cyanoryx.com/#{application}"
 set :unicorn_conf, "#{current_path}/unicorn.rb"
 set :unicorn_pid, "#{shared_path}/pids/unicorn.pid"
 
-set :local_shared_dirs, %w(tmp/pids tmp/sockets log/)
+set :local_shared_dirs, %w(tmp/pids log/)
 set :shared_files, %w(unicorn.rb)
 
 namespace :deploy do
